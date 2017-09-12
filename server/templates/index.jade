@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	each row, t in pagedata.rows
+		div(onclick='wopen("#{pagedata.rows[t].story_url}")').row.bottom-border
+			div.col-xs-9.col-md-6
+				span #{pagedata.rows[t].story_title?pagedata.rows[t].story_title:pagedata.rows[t].title} - 
+				span.author #{pagedata.rows[t].author} - 
+			div.col-xs-9.col-md-4
+				span #{new Date(pagedata.rows[t].created_at_i)}
+			div(id = pagedata.rows[t].objectID).col-xs-9.col-md-12.vcenter
+				span(onclick='remove(this,#{pagedata.rows[t].objectID})').glyphicon.glyphicon-remove

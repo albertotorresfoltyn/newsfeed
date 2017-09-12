@@ -1,0 +1,20 @@
+.white {
+    color: #ffffff
+}
+
+.bottom-border {
+    border-style: solid;
+    border-color: gray;
+    border-width: 0px 0px 1px 0px;
+}
+
+.author {
+    color: gray !important;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: auto;
+    float: none;
+    display: none;
+}

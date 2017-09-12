@@ -1,0 +1,41 @@
+.container
+	.footer
+		hr(style='margin: 30px 0 10px 0;')
+		p &copy;&nbsp;
+			a(href='#') Author
+			|  2016
+
+link(rel='stylesheet', href='/css/style.css')
+script(src='/scripts/bootstrap.min.js')
+script.
+	$(".row").hover(function(){
+		$( this ).children('[id]').show();
+		$( this ).css("background", "#fafafa");
+		$( this).css('cursor', 'pointer');
+	},function(){
+		$( this ).children('[id]').hide();
+		$( this ).css("background", "#ffffff");
+		$( this).css('cursor', 'default');
+	});
+
+script.
+	function remove(obj,id) {
+		var jqxhr = $.get( "/api/delete-atricle/"+id, function() {
+		})
+		.done(function() {
+			$(obj).parent().parent().remove(); //demeter law
+		})
+		.fail(function() {
+			alert( "error" );
+		})
+		.always(function() {
+			//nothing to do :)
+		});
+	}
+	function wopen(url){
+		if ("null"!=url){
+			window.open(url,'_blank')
+		}
+		//alert("hola")
+	}
+block footer
